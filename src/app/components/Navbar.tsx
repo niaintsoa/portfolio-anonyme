@@ -24,6 +24,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 font-mono text-xl font-bold tracking-tight text-blue-600">
           <Terminal size={24} />
           <span>Backend PHP</span>
+        </div>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
