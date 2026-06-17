@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { Mail, Terminal, Coffee, MapPin } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function Contact() {
-  const [isZoomed, setIsZoomed] = useState(false);
+  
 
   return (
     <section id="contact" className="py-24 bg-gray-50">
@@ -103,16 +102,9 @@ export function Contact() {
 
         <div className="mt-24 pt-12 border-t border-gray-200">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-            <div className="flex items-center gap-6">
-              <div
-                className="w-20 h-20 rounded-full overflow-hidden border-2 border-blue-600 shadow-lg cursor-pointer hover:scale-105 transition-transform"
-                onClick={() => setIsZoomed(true)}
-              >
-                <ImageWithFallback
-                  src="/images/profile.jpeg"
-                    alt="Profil développeur backend"
-                    className="w-full h-full object-cover"
-                  />
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 rounded-full flex items-center justify-center border-2 border-blue-600 shadow-lg bg-gray-100 text-blue-600 mx-auto mb-0">
+                  <Mail size={28} />
                 </div>
                 <div>
                   <div className="font-bold text-gray-900 mb-1">Développeur Backend PHP</div>
@@ -131,21 +123,7 @@ export function Contact() {
         </div>
       </div>
 
-      {isZoomed && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 cursor-zoom-out"
-          onClick={() => setIsZoomed(false)}
-        >
-          <motion.img
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            src="/images/profile.jpeg"
-            alt="Profil développeur backend"
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
-          />
-        </div>
-      )}
+      
     </section>
   );
 }
